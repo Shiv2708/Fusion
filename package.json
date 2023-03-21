@@ -1,6 +1,5 @@
 {
   "name": "my-new-project",
-  "type": "module",
   "devDependencies": {
     "@wdio/cli": "^8.6.5",
     "@wdio/jasmine-framework": "^8.6.3",

@@ -1,19 +1,19 @@
-// var workflow = require('../webdriverio_utils/workflows.js')
+// const { clear } = require('../webdriverio_utils/actions')
+//var login = import('../webdriverio_utils/workflows.js')
+var workflow = require('../webdriverio_utils/workflows.js')
+var healthCenterTestUtils = require('../webdriverio_utils/healthCenterTestUtils')
 
-describe('Oppia landing pages tour', function() {
-  it('should visit the Fractions landing page', async function() {
-    await browser.url('http://127.0.0.1:8000/dashboard/')
-    await browser.pause(5000)
-    // await workflow.login('neelam.dayal@iiitdmj.ac.in', 'admin@123')
-
-     const user = await $('[name="login"]')
-     await user.addValue('neelam.dayal@iiitdmj.ac.in')
-     const pass_word = await $('[name="password"]')
-     await pass_word.addValue('user@123')
-     await browser.pause(5000)
-
-     const login_button = await $('button=Login')
-     await login_button.click()
-    await browser.pause(10000)
-  });
-});
+describe('Oppia landing pages tour', function () {
+  it('should visit the Fractions landing page', async function () {
+    
+    
+    await workflow.url('http://127.0.0.1:8000/dashboard/')
+    await workflow.login('20bcs203', 'user@123')
+    await healthCenterTestUtils.goToHealthModule('.e2e-test-health-care-btn')
+    
+    await healthCenterTestUtils.goToHistorySection('.e2e-test-history-btn')
+    
+    await healthCenterTestUtils.goToFeedback('.e2e-test-view-feedback-btn')
+    
+  })
+})
